@@ -1,0 +1,19 @@
+.home {
+  max-width: 50%;
+  margin-inline: auto;
+  padding: 30px;
+  /* border: 1px solid red; */
+}
+
+h1 {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 5px;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 450px) {
+  .home {
+    max-width: 90%;
+  }
+}

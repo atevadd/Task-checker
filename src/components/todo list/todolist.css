@@ -1,0 +1,92 @@
+.todo-list {
+  background-color: var(--td-dark-blue);
+  margin-block: 30px;
+  box-shadow: 0 5px 50px #0000006e;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.todo-list .todo-item {
+  padding: 15px 15px;
+  display: grid;
+  grid-template-columns: 5% auto 5%;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid var(--td-dark-grayish-blue-2);
+}
+.todo-item:last-child {
+  border: none;
+}
+
+.todo-item input[type="checkbox"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  background-color: transparent;
+  /* Not removed via appearance */
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid var(--td-dark-grayish-blue-2);
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]:hover {
+  cursor: pointer;
+}
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--td-dark-grayish-blue-2);
+  background-color: CanvasText;
+}
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+.todo-item input[type="checkbox"]:checked {
+  border: 0.15em solid var(--td-bright-blue);
+}
+
+input[type="checkbox"]:checked ~ span {
+  text-decoration: line-through;
+  color: var(--td-dark-grayish-blue-2);
+}
+
+.todo-item span {
+  color: var(--td-dark-grayish-blue);
+  font-weight: 400;
+  text-align: left;
+}
+.todo-item i {
+  font-size: 1.4rem;
+  color: var(--td-dark-grayish-blue-2);
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.todo-item:hover i {
+  visibility: visible;
+}
+
+.todo-list__empty-state {
+  padding: 30px;
+}
+
+.todo-list__empty-state i {
+  font-size: 1.8rem;
+  color: var(--td-dark-grayish-blue);
+}
+.todo-list__empty-state h2 {
+  text-transform: capitalize;
+  font-weight: 700;
+  color: var(--td-dark-grayish-blue);
+}
